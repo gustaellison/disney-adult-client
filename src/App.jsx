@@ -18,7 +18,7 @@ function App() {
 
   return (
       <div>
-              <header></header>
+        <header></header>
       <main>
         <Routes>
           <Route path="/" element={<People people={people}/>}/>
