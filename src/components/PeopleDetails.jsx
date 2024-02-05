@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Client from '../assets/services/api'
+import Client from '../assets/services/api';
 import NewItem from './NewItem';
 
-
 const PeopleDetails = () => {
-
   let { id } = useParams();
   const [person, setPerson] = useState({});
 
-  const fetchPerson = async ( ) => {
-    let res = await Client.get(`/${id}`)
-    setPerson(res.data)
-  }
+  const fetchPerson = async () => {
+    let res = await Client.get(`/${id}`);
+    setPerson(res.data);
+  };
 
   useEffect(() => {
-    fetchPerson()
+    fetchPerson();
   }, [id]);
 
   return (
@@ -32,20 +30,14 @@ const PeopleDetails = () => {
               <p>{item.price}</p>
               <img className='item-image' src={item.image} alt={item.description} />
             </div>
-
           ))
         ) : (
           <p>No items available</p>
         )}
-
-      </ul>
-      <h2>Park: {person.park}</h2>
-      <img src={person.image} alt={person.name} />
-      <NewItem id={id} />
-
       </div>
+      <NewItem id={id} />
     </div>
   );
-        }
+};
 
-export default PeopleDetails
+export default PeopleDetails;
