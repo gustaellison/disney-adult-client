@@ -23,7 +23,7 @@ const PeopleDetails = () => {
       <ul>
         {person.items ? (
           person.items.map((item) => (
-            <li key={item._id}>{item.title}</li>
+            <li key={item._id}>{item.description}</li>
           ))
         ) : (
           <li>No items available</li>
