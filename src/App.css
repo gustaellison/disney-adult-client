@@ -15,6 +15,8 @@ font-family: 'Patrick Hand SC', cursive;
 .navbar > div {
   display: flex;
   justify-content: space-between;
+  margin-right: 40px;
+  margin-left:40px;
 }
 
 .navbar a {
@@ -128,3 +130,48 @@ input {
   background-color: #ffffff; 
   color: black;
 }
+  
+ 
+
+
+/*PEOPLE DETAIL PAGE*/
+
+.detail {
+  text-align: center;
+}
+
+.person-image {
+  border-radius: 50%;
+  width: 200px; 
+  height: 200px;
+  object-fit: cover;
+  margin-top:20px;
+}
+
+
+
+.detail h2 {
+  margin-bottom: 5px;
+}
+
+.item-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  border: 2px solid gold;
+  margin:20px;
+}
+
+.item {
+  padding: 10px;
+  text-align: center;
+}
+
+.item-image {
+  width: 100%;
+  max-height: 150px; /* Adjust the max height as needed */
+  object-fit: contain; /* Adjust the object-fit property as needed */
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
