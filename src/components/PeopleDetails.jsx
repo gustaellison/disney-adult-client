@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const PeopleDetails = (props) => {
+
   let { id } = useParams();
 
   const [person, setPerson] = useState({});
+
 
   useEffect(() => {
     if (props.people) {
