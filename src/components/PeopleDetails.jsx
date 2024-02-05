@@ -50,7 +50,7 @@ const PeopleDetails = () => {
               <p>{item.description}</p>
               <p> $ {item.price}</p>
               <img className='item-image' src={item.image} alt={item.description} />
-              <button onClick={() => (handleDelete(item._id))}>X</button>
+              <button className="delete" onClick={() => (handleDelete(item._id))}>remove</button>
             </div>
           ))
         ) : (
