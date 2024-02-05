@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Client from '../assets/services/api'
 
-const PeopleDetails = (props) => {
+const PeopleDetails = () => {
 
   let { id } = useParams();
   const [person, setPerson] = useState({});
 
+  const fetchPerson = async ( ) => {
+    let res = await Client.get(`/${id}`)
+    setPerson(res.data)
+  }
+
   useEffect(() => {
-    if (props.people) {
-      let person = props.people.find((person) => person.id === parseInt(id));
-      setPerson(person || {});
-    }
-  }, [props.people, id]);
+    fetchPerson()
+  }, [id]);
 
   return (
     <div className='detail'>
