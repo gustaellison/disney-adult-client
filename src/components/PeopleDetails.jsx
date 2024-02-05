@@ -18,21 +18,25 @@ const PeopleDetails = () => {
 
   return (
     <div className='detail'>
+      <img className='person-image' src={person.image} alt={person.name} />
       <h2>{person.name}</h2>
-      <h2>Items:</h2>
-      <ul>
+      <h2>Park: {person.park}</h2>
+      <h2>Disney Accessories:</h2>
+      <div className='item-container'>
         {person.items ? (
           person.items.map((item) => (
-            <li key={item._id}>{item.description}</li>
+            <div key={item._id} className='item'>
+              <p>{item.description}</p>
+              <p>{item.price}</p>
+              <img className='item-image' src={item.image} alt={item.description} />
+            </div>
           ))
         ) : (
-          <li>No items available</li>
+          <p>No items available</p>
         )}
-      </ul>
-      <h2>Park: {person.park}</h2>
-      <img src={person.image} alt={person.name} />
+      </div>
     </div>
   );
-};
+        }
 
-export default PeopleDetails;
+export default PeopleDetails
