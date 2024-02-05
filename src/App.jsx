@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route} from 'react-router-dom'
-import Home from './components/Home'
 import People from './components/People'
 import Client from './assets/services/api'
 import './App.css'
@@ -21,8 +20,7 @@ function App() {
               <header></header>
       <main>
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/people" element={<People people={people}/>} />
+          <Route path="/" element={<People people={people}/>}/>
         </Routes>
       </main>
       <footer></footer>
