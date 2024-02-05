@@ -37,14 +37,9 @@ const PeopleDetails = () => {
         ) : (
           <p>No items available</p>
         )}
-
-      </ul>
-      <h2>Park: {person.park}</h2>
-      <img src={person.image} alt={person.name} />
-      <NewItem id={id} />
-
       </div>
-    </div>
+      </div>
+
   );
         }
 
