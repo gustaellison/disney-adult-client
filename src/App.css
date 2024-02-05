@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+.people {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  border: 2px solid black;
+  width: 200px;
+  margin: 10px;
+}
