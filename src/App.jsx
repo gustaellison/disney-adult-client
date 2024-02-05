@@ -4,6 +4,8 @@ import People from './components/People'
 import Client from './assets/services/api'
 import './App.css'
 import PeopleDetails from './components/PeopleDetails'
+import About from './components/About'
+import Nav from './components/Nav'
 
 function App() {
   const [people, setPeople] = useState([])
@@ -14,13 +16,16 @@ function App() {
       setPeople(res.data)
     }
     getPeople()
-  }, [])
+  }, [])  
 
   return (
       <div>
-        <header></header>
+        <header>
+          <Nav />
+        </header>
       <main>
         <Routes>
+          <Route path = '/about' element={<About />} />
           <Route path="/" element={<People people={people}/>}/>
           <Route path="/:id" element={<PeopleDetails />} />
         </Routes>
