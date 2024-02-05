@@ -3,6 +3,7 @@ import { Routes, Route} from 'react-router-dom'
 import People from './components/People'
 import Client from './assets/services/api'
 import './App.css'
+import PeopleDetails from './components/PeopleDetails'
 
 function App() {
   const [people, setPeople] = useState([])
@@ -21,6 +22,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<People people={people}/>}/>
+          <Route path="/:id" element={<PeopleDetails />} />
         </Routes>
       </main>
       <footer></footer>
