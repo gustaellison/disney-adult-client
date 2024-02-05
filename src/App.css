@@ -55,8 +55,7 @@ h1, h2, h3, p {
 .people {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  
+  justify-content: space-between; 
 }
 
 
@@ -169,9 +168,14 @@ input {
 
 .item-image {
   width: 100%;
-  max-height: 150px; /* Adjust the max height as needed */
-  object-fit: contain; /* Adjust the object-fit property as needed */
+  max-height: 150px;
+  object-fit: contain; 
   border-radius: 5px;
   margin-bottom: 5px;
+}
+
+.total-price {
+  margin-top: 15px;
+  font-size: 30px;
 }
 

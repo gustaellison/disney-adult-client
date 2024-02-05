@@ -12,6 +12,15 @@ const PeopleDetails = () => {
     setPerson(res.data);
   };
 
+    // Function to calculate total price
+    const calculateTotalPrice = () => {
+      if (!person.items || person.items.length === 0) {
+        return 0;
+      }
+  
+      return person.items.reduce((total, item) => total + item.price, 0);
+    };
+
   useEffect(() => {
     fetchPerson();
   }, [id]);
@@ -19,15 +28,16 @@ const PeopleDetails = () => {
   return (
     <div className='detail'>
       <img className='person-image' src={person.image} alt={person.name} />
-      <h2>{person.name}</h2>
-      <h2>Park: {person.park}</h2>
+      <h1>{person.name}</h1>
+      <h3>Park: {person.park}</h3>
       <h2>Disney Accessories:</h2>
       <div className='item-container'>
         {person.items ? (
           person.items.map((item) => (
             <div key={item._id} className='item'>
+              <p>{item.title}</p>
               <p>{item.description}</p>
-              <p>{item.price}</p>
+              <p> $ {item.price}</p>
               <img className='item-image' src={item.image} alt={item.description} />
             </div>
           ))
@@ -35,6 +45,10 @@ const PeopleDetails = () => {
           <p>No items available</p>
         )}
       </div>
+      <div className='total-price'>
+        <p>Your Total Price: ${calculateTotalPrice()}</p>
+        <p>Add more Disney Accessories to become the ultimate Disney Adult</p>
+        </div>
       <NewItem id={id} />
     </div>
   );
