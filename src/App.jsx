@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     const getPeople = async () => {
-      let res = await Client.get('/people')
+      let res = await Client.get('/')
       setPeople(res.data)
     }
     getPeople()
