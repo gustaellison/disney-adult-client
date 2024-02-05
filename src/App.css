@@ -80,9 +80,58 @@ h1, h2, h3, p {
 .card-content {
   padding: 10px;
   color:black;
+}
+
+.newItemForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 230px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #fff;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); 
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 87, 34, 0.1);
+}
+
+.formDiv {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  color: black;
+  font-size: 18px;
+}
+
+input {
+  width: calc(100% - 22px); 
+  margin: 4px 0; 
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box; 
+}
+
+.formSubmit {
+  background-color: #000000; 
+  color: #fff;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: auto;
+  display: block;
+}
+
+.formSubmit:hover {
+  background-color: #ffffff; 
+  color: black;
+}
   
  
-}
+
 
 /*PEOPLE DETAIL PAGE*/
 
@@ -124,3 +173,4 @@ h1, h2, h3, p {
   border-radius: 5px;
   margin-bottom: 5px;
 }
+
