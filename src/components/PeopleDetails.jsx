@@ -16,6 +16,17 @@ const PeopleDetails = () => {
     fetchPerson();
   }, [id]);
 
+
+  const handleDelete = async (itemId) => {
+    try {
+        await Client.delete(`/${id}/${itemId}`);
+        fetchPerson();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+
   return (
     <div className='detail'>
       <img className='person-image' src={person.image} alt={person.name} />
@@ -29,6 +40,7 @@ const PeopleDetails = () => {
               <p>{item.description}</p>
               <p>{item.price}</p>
               <img className='item-image' src={item.image} alt={item.description} />
+              <button onClick={() => (handleDelete(item._id))}>X</button>
             </div>
           ))
         ) : (
