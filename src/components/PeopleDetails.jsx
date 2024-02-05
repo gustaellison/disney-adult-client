@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Client from '../assets/services/api'
+import NewItem from './NewItem';
+
 
 const PeopleDetails = () => {
 
@@ -23,7 +25,7 @@ const PeopleDetails = () => {
       <ul>
         {person.items ? (
           person.items.map((item) => (
-            <li key={item._id}>{item.description}</li>
+            <li key={item._id}>{item.title}</li>
           ))
         ) : (
           <li>No items available</li>
@@ -31,6 +33,7 @@ const PeopleDetails = () => {
       </ul>
       <h2>Park: {person.park}</h2>
       <img src={person.image} alt={person.name} />
+      <NewItem id={id} />
     </div>
   );
 };
