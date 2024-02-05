@@ -9,6 +9,7 @@ const People = ({ people }) => {
                     // eslint-disable-next-line react/jsx-key
                     <Link to={`/${person._id}`}>
                     <div className="card" key={person._id}>
+                        <img src={person.image} alt={person.name} height="200px" />
                         {person.name}
                     </div>
                     </Link>
