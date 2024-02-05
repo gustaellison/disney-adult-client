@@ -4,9 +4,7 @@ import { useParams } from 'react-router-dom';
 const PeopleDetails = (props) => {
 
   let { id } = useParams();
-
   const [person, setPerson] = useState({});
-
 
   useEffect(() => {
     if (props.people) {
@@ -16,7 +14,7 @@ const PeopleDetails = (props) => {
   }, [props.people, id]);
 
   return (
-    <div className='people-detail'>
+    <div className='detail'>
       <h2>{person.name}</h2>
       <h2>Items:</h2>
       <ul>
